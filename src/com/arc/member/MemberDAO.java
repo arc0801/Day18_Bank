@@ -29,6 +29,9 @@ public class MemberDAO {
 		
 		result = st.executeUpdate();
 		
+		st.close();
+		con.close();
+		
 		return result;
 		
 	}
@@ -51,19 +54,18 @@ public class MemberDAO {
 		
 		rs = st.executeQuery();
 		
-		
 		if(rs.next()) {
 			memberDTO.setName(rs.getString("name"));
 			memberDTO.setPh(rs.getString("ph"));
-			
+			memberDTO.setEmail(rs.getString("email"));
 		}else {
 			memberDTO = null;
 		}
 		
+		rs.close();
+		st.close();
+		con.close();
 		
 		return memberDTO;
 	}
-	
-	
-	
 }

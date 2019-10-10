@@ -31,7 +31,7 @@ public class MemberController {
 			System.out.println("3. 종료");
 
 			int select = sc.nextInt();
-			memberDTO = null; //?????
+			memberDTO = null; //????? 초기화 필요한 변수
 
 			switch(select) {
 			case 1:
@@ -39,22 +39,25 @@ public class MemberController {
 				
 				try {
 					select = memberDAO.memberJoin(memberDTO);
-					String msg = "Member Join Fail";
-					
-					if(select > 0) {
-						msg = "Member Join Success";
-					}
-					
-					bankView.view(msg);
-				
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//e.printStackTrace();
+					select = 0;
 				}
+				
+				String msg = "Member Join Fail";
+				
+				if(select > 0) {
+					msg = "Member Join Success";
+				}
+				
+				bankView.view(msg);
+				
 				break;
 
 			case 2:
-				memberDTO = memberInput.memberLogin(sc);
+				memberDTO = memberInput.memberJoin(sc);
+				
 				try {
 					memberDTO = memberDAO.memberLogin(memberDTO);
 				} catch (Exception e) {
@@ -70,26 +73,13 @@ public class MemberController {
 				}
 				
 				bankView.view(msg2);
+				
 				break;
 
 			default:
 				check = !check;
 				break;
-
-
-
-
-
 			}
 		}
-
-
-
-
-
 	}
-
-
-
-
 }
