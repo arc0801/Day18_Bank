@@ -3,9 +3,9 @@ package com.arc.acoount;
 public class AccountDTO {
 
 	private String id;
-	private String accountNum;
-	private String accountName;
-	private int balance;
+	private String aNum;
+	private String aName;
+	private int aBal;
 	
 	
 	public String getId() {
@@ -14,23 +14,23 @@ public class AccountDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getAccountNum() {
-		return accountNum;
+	public String getaNum() {
+		return aNum;
 	}
-	public void setAccountNum(String accountNum) {
-		this.accountNum = accountNum;
+	public void setaNum(String aNum) {
+		this.aNum = aNum;
 	}
-	public String getAccountName() {
-		return accountName;
+	public String getaName() {
+		return aName;
 	}
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
+	public void setaName(String aName) {
+		this.aName = aName;
 	}
-	public int getBalance() {
-		return balance;
+	public int getaBal() {
+		return aBal;
 	}
-	public void setBalance(int balance) {
-		this.balance = balance;
+	public void setaBal(int aBal) {
+		this.aBal = aBal;
 	}
 	
 	

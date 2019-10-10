@@ -21,11 +21,14 @@ public class AccountDAO {
 		st = con.prepareStatement(sql);
 		
 		st.setString(1, accountDTO.getId());
-		st.setString(2, accountDTO.getAccountNum());
-		st.setString(3, accountDTO.getAccountName());
-		st.setInt(4, accountDTO.getBalance());
+		st.setString(2, accountDTO.getaNum());
+		st.setString(3, accountDTO.getaName());
+		st.setInt(4, accountDTO.getaBal());
 		
 		result = st.executeUpdate();
+		
+		st.close();
+		con.close();
 		
 		return result;
 	}
