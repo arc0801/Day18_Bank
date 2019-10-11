@@ -1,5 +1,6 @@
 package com.arc.bank;
 
+import com.arc.acoount.AccountController;
 import com.arc.member.MemberController;
 import com.arc.member.MemberDAO;
 import com.arc.member.MemberDTO;
@@ -47,7 +48,8 @@ public class BankMain {
 			/*MemberControll memberControll = new MemberControll();
 		memberControll.start();*/
 
-		
+		AccountController accountController = new AccountController();
+		accountController.start();
 		
 	}
 }

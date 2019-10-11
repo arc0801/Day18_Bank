@@ -5,7 +5,7 @@ public class AccountDTO {
 	private String id;
 	private String aNum;
 	private String aName;
-	private int aBal;
+	private long aBal;
 	
 	
 	public String getId() {
@@ -26,10 +26,10 @@ public class AccountDTO {
 	public void setaName(String aName) {
 		this.aName = aName;
 	}
-	public int getaBal() {
+	public long getaBal() {
 		return aBal;
 	}
-	public void setaBal(int aBal) {
+	public void setaBal(long aBal) {
 		this.aBal = aBal;
 	}
 	

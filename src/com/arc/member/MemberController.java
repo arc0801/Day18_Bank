@@ -2,6 +2,7 @@ package com.arc.member;
 
 import java.util.Scanner;
 
+import com.arc.acoount.AccountController;
 import com.arc.bankView.BankView;
 import com.arc.bankinput.MemberInput;
 
@@ -12,6 +13,7 @@ public class MemberController {
 	private MemberInput memberInput;
 	private MemberDTO memberDTO;
 	private BankView bankView;
+	private AccountController accountController;
 	
 	public MemberController() {
 		sc = new Scanner(System.in);
@@ -19,6 +21,7 @@ public class MemberController {
 		memberInput = new MemberInput();
 		memberDTO = new MemberDTO();
 		bankView = new BankView();
+		accountController = new AccountController();
 	}
 
 
@@ -56,7 +59,7 @@ public class MemberController {
 				break;
 
 			case 2:
-				memberDTO = memberInput.memberJoin(sc);
+				memberDTO = memberInput.memberLogin(sc); //id, pw 불러오기 위해~
 				
 				try {
 					memberDTO = memberDAO.memberLogin(memberDTO);
@@ -66,13 +69,12 @@ public class MemberController {
 					memberDTO = null;
 				}
 				
-				String msg2 = "Login Fail";
-				
 				if(memberDTO != null) {
-					msg2 = "Login Success";
+					bankView.view("Login Success");
+					accountController.start(memberDTO);
+				}else {
+					bankView.view("Login Fail");
 				}
-				
-				bankView.view(msg2);
 				
 				break;
 

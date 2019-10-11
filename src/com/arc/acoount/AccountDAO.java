@@ -23,7 +23,7 @@ public class AccountDAO {
 		st.setString(1, accountDTO.getId());
 		st.setString(2, accountDTO.getaNum());
 		st.setString(3, accountDTO.getaName());
-		st.setInt(4, accountDTO.getaBal());
+		st.setLong(4, accountDTO.getaBal());
 		
 		result = st.executeUpdate();
 		

@@ -12,13 +12,13 @@ public class MemberInput {
 		memberDTO.setId(sc.next());
 		System.out.println("PW 입력");
 		memberDTO.setPw(sc.next());
-		
+
 		return memberDTO;
 	}
-	
-	
-	
-	
+
+
+
+
 	//회원가입
 	public MemberDTO memberJoin(Scanner sc) {
 		MemberDTO memberDTO = new MemberDTO();
@@ -32,7 +32,7 @@ public class MemberInput {
 		memberDTO.setPh(sc.next());
 		System.out.println("Email 입력");
 		memberDTO.setEmail(sc.next());
-		
+
 		return memberDTO;
 	}
 }
