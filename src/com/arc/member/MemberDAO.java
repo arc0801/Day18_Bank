@@ -45,7 +45,7 @@ public class MemberDAO {
 		
 		con = DBConnector.getConnect();
 		
-		String sql = "select * from member where id =? and pw =?";
+		String sql = "select * from log where id =? and pw =?";
 		
 		st = con.prepareStatement(sql);
 		
